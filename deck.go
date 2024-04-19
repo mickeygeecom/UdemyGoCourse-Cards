@@ -17,7 +17,7 @@ func newDeck() deck {
 	cards := deck{}
 
 	cardSuits := []string{"Spar", "Ruder", "Hjerter", "Klør"}
-	cardValues := []string{"Es", "To", "Tre", "Fire", "Fem", "Seks", "Syv", "Otte", "Ni", "Ti", "Knægt", "Dame", "Konge"}
+	cardValues := []string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Knægt", "Dame", "Konge"}
 
 	for _, suit := range cardSuits {
 		for _, value := range cardValues {
@@ -44,14 +44,9 @@ func (d deck) shuffleDeck() {
 
 }
 
-// func pickRandomCard(d deck) string {
-// 	randomIndex := rand.Intn(len(d))
-// 	return d[randomIndex]
+// func dealCards(d deck, handSize int) (deck, deck) {
+// 	return d[:handSize], d[handSize:]
 // }
-
-func dealCards(d deck, handSize int) (deck, deck) {
-	return d[:handSize], d[handSize:]
-}
 
 func (d deck) saveToFile(filename string) {
 	deckStringed := deck.toString(d)
